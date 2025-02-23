@@ -1,0 +1,11 @@
+asgiref==3.8.1
+Django==5.1.6
+django-admin-dracula==0.0.3
+django-rest-framework==0.1.0
+djangorestframework==3.15.2
+sqlparse==0.5.3
+asgiref==3.8.1
+Django==5.1.6
+django-admin-dracula==0.0.3
+djangorestframework==3.15.2
+sqlparse==0.5.3
