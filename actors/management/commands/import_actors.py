@@ -10,22 +10,18 @@ class Command(BaseCommand):
         parser.add_argument(
             'file_name',
             type=str,
-            help="Nome do arquivo com atores",
+            help='Nome do arquivo CSV com atores',
         )
 
     def handle(self, *args, **options):
         file_name = options['file_name']
+
         with open(file_name, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
-
             for row in reader:
                 name = row['name']
-                birthday = datetime.strptime(
-                    row['birthday'],
-                    '%Y-%m-%d').date()
-                nationality = row[
-                    'nationality'
-                ]
+                birthday = datetime.strptime(row['birthday'], '%Y-%m-%d').date()
+                nationality = row['nationality']
 
                 self.stdout.write(self.style.NOTICE(name))
 
@@ -33,9 +29,6 @@ class Command(BaseCommand):
                     name=name,
                     birthday=birthday,
                     nationality=nationality,
-                    )
-
-            self.stdout.write(self.style.SUCCESS(
-                'Atores importados com sucesso!'
                 )
-            )
+
+        self.stdout.write(self.style.SUCCESS('ATORES IMPORTADOS COM SUCESSO!'))

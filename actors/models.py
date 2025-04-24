@@ -2,11 +2,8 @@ from django.db import models
 
 
 NATIONALITY_CHOICES = (
-    ("BRA", "Brasil"),
-    ("USA", "Estados Unidos"),
-    ("ARG", "Argentina"),
-    ("ISR", "Israel"),
-    ("RUN", "Reino Unido")
+    ('USA', 'Estados Unidos'),
+    ('BRAZIL', 'Brasil'),
 )
 
 
